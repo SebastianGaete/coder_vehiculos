@@ -1,0 +1,68 @@
+{% extends 'layout_core/layout_core.html' %}
+{% block title %} Vehículos por tribunal {{vehiculo.disposicion}} {% endblock %}
+
+{% block content %}
+
+
+
+<section>
+    <div class="contenedor_tribunales">
+
+        <div class="container-fluid p-0">
+            <div class="row text-center">
+                <div class="col contenedor_tipo_tribunal p-4">
+                        <h1>Vehículos en custodia a disposición de</h1>
+                        <h1> "{{disposicion}}" </h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col mt-3">
+                    
+                    <h3 class="cantidad_vehiculos text-center">Cantidad  {{ cantidad }}</h3>
+
+                    <form action="{% url 'filtro_vehiculos_tribunales' disposicion %}" method="GET" class="pb-2 d-flex justify-content-center gap-2">
+                        <input type="search" class="form-control shadow-none border border-success" name="buscar" id="buscar" placeholder="Buscar por PPU o nro. de parte">
+                            
+                        <button type="submit" class="button_search"><i class="bi bi-search"></i></button>
+                    </form> 
+
+
+                    <table class="table table-striped table-hover table-bordered small" width="100%">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="col-1">P.P.U</th>
+                                <th class="col-1">Marca</th>
+                                <th class="col-1">Modelo</th>
+                                <th class="col-1">Nro. Parte </th>
+                                <th class="col-1">Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for vehiculo in vehiculos %}
+                                <tr class="text-center">
+                                    <td class="">{{ vehiculo.placa_patente }}</td>
+                                    <td>{{ vehiculo.marca }}</td>
+                                    <td>{{ vehiculo.modelo }}</td>
+                                    {% if vehiculo.numero_de_parte %}
+                                        <td>{{ vehiculo.numero_de_parte }}</td>
+                                    {% else %}
+                                        <td>No asignado</td>
+                                    {% endif %}
+                                    <td>
+                                        <a href="{% url 'detalle_vehiculo' vehiculo.id %}">
+                                            <Button class="boton_tribunales">Ver</Button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

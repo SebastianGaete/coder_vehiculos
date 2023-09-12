@@ -1,0 +1,40 @@
+<table class="table table- table-hover table-bordered mt-3">
+    <tbody>
+        <tr>
+            <th>Nombres</th>
+            <td>{{ propietario.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Apellidos</th>
+            <td>{{ propietario.apellidos }}</td>
+        </tr>
+        <tr>
+            <th>Rut</th>
+            <td>{{ propietario.rut }}</td>
+        </tr>
+        <tr>
+            <th>Teléfono</th>
+            {% if propietario.telefono %}
+                <td>{{ propietario.telefono }}</td>
+            {% else %}
+                <td>No Asignado</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Dirección</th>
+            {% if propietario.direccion %}
+                <td>{{ propietario.direccion }}</td>
+            {% else %}
+                <td>No Asignada</td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Comuna</th>
+            {% if propietario.comuna %}
+                <td>{{ propietario.comuna }}</td>
+            {% else %}
+                <td>No Asignada</td>
+            {% endif %}
+        </tr>
+    </tbody>
+</table>

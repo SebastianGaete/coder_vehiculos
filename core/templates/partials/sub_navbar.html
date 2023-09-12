@@ -1,0 +1,59 @@
+<div class="container-fluid p-0 bg_filtros">
+    <div class="row pt-4">
+        <div class="col col-lg-6 col-md-6 col-12 text-center">
+
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <p class="h4 text-white">Filtros</p>
+                <i class="bi bi-filter icon_index"></i>
+            </div>
+
+            <div class="dropdown">
+                <button type="button" class="buttons_index dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Buscar por
+                </button>
+                <ul class="dropdown-menu enlaces_filtros">
+                    <li>
+                        <a href="{% url 'filtro_vehiculos_tribunales' 'Juzgado Policía Local Villa Alemana' %}">Juzgado Policía Local</a>
+                    </li>
+        
+                    <li>
+                        <a href="{% url 'filtro_vehiculos_tribunales' 'Fiscalía Local Villa Alemana' %}">Fiscalía Local</a>
+                    </li>
+        
+                    <li>
+                        <a href="{% url 'filtro_vehiculos_tribunales' 'Propietario' %}">Propietario</a>
+                    </li>
+                    
+                    <li>
+                        <a href="{% url 'filtro_vehiculos_tribunales' 'Fiscales' %}">Fiscales</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'vehiculos_entregados' %}">Vehículos Entregados</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col col-lg-6 col-md-6 col-12 text-center">
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <p class="h4 text-white">Registros</p>
+                <i class="bi bi-card-checklist icon_index"></i>
+            </div>
+        
+            
+            <a href="{% url 'formulario_vehiculo' %}" class="text-white">
+                <button class="buttons_index">Recibir Vehículo</button>
+            </a>
+            
+
+            <form action="{% url 'home' %}" method="GET" class="mt-5 pb-5 d-flex justify-content-center gap-2">
+                <input type="search" class="form-control input_search shadow-none" name="buscar" id="buscar" placeholder="Buscar">
+                
+                <button class="button_search"><i class="bi bi-search"></i></button>
+            </form> 
+        </div>
+
+    </div>
+</div>

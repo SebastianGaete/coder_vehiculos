@@ -1,0 +1,32 @@
+<table class="table table- table-hover table-bordered mt-3">
+    <tbody>
+        <tr>
+            <th>Numero de oficio</th>
+            <td>{{ entrega.numero_de_oficio }}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{ entrega.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Apellidos</th>
+            <td>{{ entrega.apellidos }}</td>
+        </tr>
+        <tr>
+            <th>Rut</th>
+            <td>{{ entrega.rut }}</td>
+        </tr>
+        <tr>
+            <th>Teléfono</th>
+            <td>{{ entrega.telefono }}</td>
+        </tr>
+        <tr>
+            <th>Fecha de entrega</th>
+            <td>{{ entrega.fecha_entrega_vehiculo |date:"l d F Y" }}</td>
+        </tr>
+        <tr>
+            <th>Observaciones</th>
+            <td>{{ entrega.observaciones }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,127 @@
+{% extends 'layout_core/layout_core.html' %}
+{% block title  %}Detalle de Vehículo{% endblock %}
+
+{% block content %}
+<section>
+
+    <div class="container-fluid bg-light">
+
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col contenedor_tipo_tribunal p-4 ">
+                    <h1 class="text-center">Detalle de Vehículo</h1>
+                </div>
+            </div>
+        </div>
+        {% if vehiculo.entregado == False %}
+            {% if vehiculo.registro_propietario == False %}
+                <div class="container">
+                    <div class="row mt-3 mb-3">
+                        <div class="col">
+                            <h3 class="subtitulos_detalle">Aún no se ha registrado algún propietario para este vehículo</h3>
+                            <a href="{% url 'formulario_propietario' vehiculo.id %}">
+                                <button class="btn btn-success">Registrar Propietario <i class="bi bi-person-plus-fill"></i></button>
+                            </a>
+                        </div>
+                    </div>              
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <div class="container">    
+            <!-- DETALLE COMPLETO DEL VEHÍCULO -->
+            <div class="row mt-5 mb-4">
+                <div class="col-sm-12 col-md-6">
+                    <div class="text-center d-flex justify-content-center gap-4">
+                        <div>
+                            <h6>Funcionario que recepcionó</h6>
+                            <p>{{vehiculo.funcionario_receptor}}</p>
+                        </div>
+                        {% if vehiculo.entregado == True %}
+                            <div>
+                                <h6>Funcionario que entregó</h6>
+                                <p>{{ vehiculo.funcionario_entrega }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+        
+                    <div class="card contenedor_img_detalle mt-3">
+                        <img src="{{ vehiculo.imagen.url }}" class="img-fluid" alt="{{ vehiculo.marca }} {{ vehiculo.placa_patente }}">
+                    </div>
+
+                    <!-- BOTONES DE ACCION VEHÍCULO -->
+                    {% if vehiculo.entregado == False %}
+                        <div class="d-flex justify-content-center gap-4 mt-3">
+                            <a href="{% url 'formulario_entrega_vehiculo' vehiculo.id %}">
+                                <button class="btn btn-success">Entregar Vehículo <i class="bi bi-check-circle"></i></button>
+                            </a>
+                            <a href="{% url 'modificar_vehiculo' vehiculo.pk %}">
+                                <button class="btn btn-warning ">Modificar <i class="bi bi-file-earmark-minus"></i></button>
+                            </a>
+                            {% if user.is_superuser %}
+                                <a href="{% url 'eliminar_vehiculo' vehiculo.id %}">
+                                    <button class="btn btn-danger">Eliminar <i class="bi bi-trash3-fill"></i></button>
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-sm-12 col-md-6">
+                    {% include 'pages/detalle/detalle_tabla_vehiculo.html' %}
+                </div>
+            </div>
+        </div>
+        
+    
+        <!-- LÓGICA DE ENTREGA VEHÍCULO Y REGISTRO DE PROPIETARIO -->
+        {% if vehiculo.entregado == True %}
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="subtitulos_detalle">Información de la entrega del vehículo</h3>
+                        <!-- Tabla de entrega -->
+                        {% include 'pages/detalle/detalle_tabla_entrega.html' %}
+                    </div>
+                </div>
+            </div>
+    
+            {% if vehiculo.registro_propietario == True %}
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="subtitulos_detalle">Registro de propietario</h3>
+                            {% include 'pages/detalle/detalle_tabla_propietario.html' %}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="container mt-3 mb-4">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="subtitulos_detalle">Registro de propietario</h3>
+                            <h4>Durante su estadía en el cuartel policial, no se registró información sobre el propietario de este vehículo.</h4>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+    
+        {% else %}
+    
+            {% if vehiculo.registro_propietario == True %}
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="subtitulos_detalle">Registro de propietario</h3>
+                            {% include 'pages/detalle/detalle_tabla_propietario.html' %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+    
+        {% endif %}
+    </div>
+
+
+</section>
+{% endblock %}

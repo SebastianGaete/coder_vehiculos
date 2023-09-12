@@ -1,0 +1,74 @@
+    <table class="table table- table-hover table-bordered mt-3">
+        <tbody>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ vehiculo.tipo }}</td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td>{{ vehiculo.marca }}</td>
+            </tr>
+            <tr>
+                <th>Modelo</th>
+                <td>{{ vehiculo.modelo }}</td>
+            </tr>
+            <tr>
+                <th>P.P.U</th>
+                <td>{{ vehiculo.placa_patente }}</td>
+            </tr>
+            <tr>
+                <th>Año</th>
+                <td>{{ vehiculo.año }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ vehiculo.color }}</td>
+            </tr>
+            <tr>
+                <th>Fecha ingreso</th>
+                <td>{{ vehiculo.fecha_ingreso | date:"l d F Y - H:i" }} Hrs.</td>
+            </tr>
+            <tr>
+                <th>Diposición</th>
+                <td>{{ vehiculo.disposicion }}</td>
+            </tr>
+            <tr>
+                <th>Motivo</th>
+                <td>{{ vehiculo.motivo }}</td>
+            </tr>
+            <tr>
+                <th>Número de parte</th>
+                <td>
+                    {% if vehiculo.numero_de_parte %}
+                        {{ vehiculo.numero_de_parte }}
+                    {% else %}
+                        No asignado
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Número de oficio</th>
+                <td>
+                    {% if vehiculo.numero_de_oficio %}
+                        {{ vehiculo.numero_de_oficio }}
+                    {% else %}
+                        No asignado
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Acta entrega</th>
+                <td>{{ vehiculo.acta_entrega }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>
+                    {% if vehiculo.observaciones %}
+                        {{ vehiculo.observaciones }}
+                    {% else %}
+                        Sin observaciones
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>

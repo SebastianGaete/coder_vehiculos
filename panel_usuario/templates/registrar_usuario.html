@@ -1,0 +1,49 @@
+{% extends 'layout_panel/layout_panel.html' %}
+{% block title %}Registro de usuarios{% endblock %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% include 'partials/navbar.html' %}
+{% endif %}
+<section>
+    <div class="container-fluid p-0 imagen_hero">
+        <div class="container">
+    
+            <div class="row mt-2 d-flex justify-content-center">
+                
+                <div class="col col-lg-6 col-md-12 col-12 m-auto">
+                    <form method="POST" class="card card-body bg-transparent border-0">
+                        {% csrf_token %}
+                        <h1 class="titulo_panel">Registrar Usuario</h1>
+    
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-danger text-center role="alert">
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        
+                        {{form.as_table}}   
+                                                
+                        <div class="text-center">
+                            <button class="boton_panel">Registrar</button>
+                        </div>
+                        
+                    </form>
+                    
+                </div>
+        
+                <div class="col col-lg-6 col-md-6">
+                    <div>
+                        <img src="{% static 'images/carabs_panel.webp' %}" class="imagen_fondo" alt="">
+                    </div>
+                </div>
+
+            </div>     
+        </div>
+    </div>
+</section>
+{% endblock %}

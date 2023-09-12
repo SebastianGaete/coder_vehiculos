@@ -1,0 +1,59 @@
+{% extends 'layout_core/layout_core.html' %}
+{% block title  %}Registrar Vehículo {% endblock %}
+
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col m-auto">
+                {% if messages %}
+                        {% for message in messages %}
+
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                                    <div class="text-center">
+                                        <p>{{ message }}</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    
+                                        <p>Si mantiene información referente al propietario del vehículo que acaba de registrar, porfavor realice el registro lo antes posible!</p>
+                                        <p>Para hacerlo, haga click en el botón de abajo y seleccione el vehículo registrado recientemente.</p>
+                                        <a href="{% url 'home' %}"><button class="btn btn-success">Inicio</button></a>
+                                    </div>
+                                </div>
+                            {% endif %}
+            
+                            {% if message.tags == 'error' %}
+                                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                                    <div class="text-center">
+                                        <p>{{ message }}</p> 
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>      
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col col-lg-6 col-md-12 col-12 m-auto">
+                <h1 class="titulo_formulario">Formulario de registro de vehículos</h1>
+                <p class="text-center">Todos los campos que contengan en su interior un <span class="text-danger h6">*</span> son obligatorios</p>
+                <p class="advertencia_subtitulo">Procura ingresar los datos en el formato que se solicita <i class="bi bi-lightbulb-fill"></i></p>
+                
+                <form method="POST" enctype="multipart/form-data" class="card card-body bg-transparent border-0">
+                    {% csrf_token %}
+                                                               
+                    {{ form.as_table }}
+
+                    <button type="submit" class="btn btn-success mt-2">Registrar</button>   
+                </form> 
+            </div>
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

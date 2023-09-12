@@ -1,0 +1,49 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg p-4">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'images/logo_carabineros.svg' %}" class="logo_nav" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto d-flex align-items-center gap-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                </li>
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'registro_usuario' %}">Registrar funcionario</a>
+                </li>
+                {% endif %}
+                
+                <button class="boton_usuario_nav" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="text-center informacion_usuario">
+        <h5 class="mb-4 titulo_informacion_usuario">Información de usuario</h5>
+        <p>Grado: {{user.grado}}</p>
+        <p>Nombre: {{user.first_name}} {{user.last_name}}</p>
+        <p>Código de funcionario: {{user.codigo_funcionario}}</p>
+        <p>Correo: {{user.email}}</p>
+        
+        <div>
+            <a class="btn btn-danger" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
+            <a class="btn btn-secondary" href="{% url 'cambiar_contraseña' %}">Cambiar contraseña</a>
+        </div>
+    </div>
+</div>

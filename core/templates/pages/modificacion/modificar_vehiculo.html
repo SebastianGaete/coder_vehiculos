@@ -1,0 +1,64 @@
+{% extends 'layout_core/layout_core.html' %}
+{% block title  %}Modificar vehiculo{% endblock %}
+
+{% block content %}
+<section>
+
+    <div class="container-fluid bg-warning">
+        <div class="row p-4">
+            <div class="col">
+                <h5 class="text-center">El sistema solicitará que se ingrese nuevamente la fecha de ingreso de este vehículo cada vez que se requiera modificar un campo!</h5>
+            </div>
+        </div>
+    </div>
+
+   <div class="container">
+        <div class="row">
+            <div class="col m-auto">
+                {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                                    <div class="text-center">
+                                        <p>{{ message }}</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <a href="{% url 'detalle_vehiculo' vehiculo.id %}">
+                                            <buttonn class="btn btn-success">Volver</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                
+                            {% if message.tags == 'error' %}
+                                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                                    <div class="text-center">
+                                        <p>{{ message }}</p> 
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>      
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        
+        <div class="row d-flex justify-content-center">
+            <div class="col col-lg-6 col-md-12 col-12 m-auto">
+                <h1 class="titulo_formulario">Modificación de registro</h1>
+                <p class="text-center">Todos los campos que contengan en su interior un <span class="text-danger">*</span> son obligatorios</p>
+                <p class="advertencia_subtitulo">Procura ingresar los datos en el formato que se solicita <i class="bi bi-lightbulb-fill"></i></p>
+
+                <form method="POST" enctype="multipart/form-data" class="card card-body bg-transparent border-0">
+                    {% csrf_token %}
+                                                                
+                    {{ form.as_table }}
+
+                    <button type="submit" class="btn btn-success mt-2">Modificar</button>   
+                    
+                </form> 
+            </div>
+        </div>
+   </div>
+</section>
+{% endblock %}
