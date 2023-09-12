@@ -1,12 +1,12 @@
 from .models import Vehiculo, Propietario_vehiculo, Entrega_vehiculo
 from django import forms
 
-def atributos_custom(atrrs=None):
+def atributos_custom(atributos=None):
     atributos_bases ={
-        'class':'form-control shadow-none border-1 mb-2 border-success',
+        'class':'form-control shadow-none border-1 mb-2 border-primary',
     }
-    if atrrs:
-        atributos_bases.update(atrrs)
+    if atributos:
+        atributos_bases.update(atributos)
     return atributos_bases
 
 

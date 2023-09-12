@@ -1,6 +1,6 @@
 :root{
-    --bg_fondo_page: #1d7d5f;
-    --bg_search: #359e72;
+    --bg_fondo_page: #0885a7;
+    --bg_search: #0fc3e8;
     --blanco: #f0f0f0;
     --blancoFuente: #f2eff3;
     --fuente: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -20,11 +20,11 @@ li{
 
 /* NAVBAR */
 .logo_nav{
-    width: 400px;
+    width: 100px;
 }
 @media (max-width: 768px ) {
     .logo_nav{
-        width: 200px;
+        width: 80px;
     }
 }
 .informacion_usuario p{
@@ -188,12 +188,16 @@ li{
     background-color: var(--blanco);
 }
 .contenedor_img_detalle{
-    max-width: 600px;
+    max-width: 580px;
 }
 .contenedor_img_detalle img{
-    height: 450px;
+    height: 330px;
 }
-
+@media (max-width: 768px) {
+    .contenedor_img_detalle img{
+        height: 210px;
+    }
+}
 .subtitulos_detalle{
     font-weight: 600;
 }
