@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     CHOICES = (
-        ('Carabinero',)*2,
+        ('Cabo',)*2,
         ('Cabo 2do.',)*2,
         ('Cabo 1ro.',)*2,
     )

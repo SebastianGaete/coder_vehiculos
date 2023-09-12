@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=&pkk%^zvm#iasw0@x_c4rdxe7hr!&3%3k!p8c5_5ary0(wua9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -84,16 +84,12 @@ WSGI_APPLICATION = 'proyecto_vehiculos.wsgi.application'
 
 # PGPASSWORD=DuFVyWpv7zcEHZYbPVzA psql -h containers-us-west-172.railway.app -U postgres -p 8053 -d railway
 
-CSRF_TRUSTED_ORIGINS = ['https://extenencia.up.railway.app']
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PORT': '8053',
-        'PASSWORD': 'DuFVyWpv7zcEHZYbPVzA',
-        'HOST': 'containers-us-west-172.railway.app'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db_coder_vehiculos.sqlite',
     }
 }
 
