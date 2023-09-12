@@ -4,8 +4,8 @@ ACTA_ENTREGA = (
 )
 
 CHOICES_TRIBUNALES = (
-        ('Juzgado Policía Local Villa Alemana',)*2,
-        ('Fiscalía Local Villa Alemana',)*2,
+        ('Juzgado Policía Local',)*2,
+        ('Fiscalía Local',)*2,
         ('Propietario',)*2,
         ('Fiscales',)*2
     )
