@@ -1,5 +1,5 @@
 :root{
-    --botones: #2a7440;
+    --botones: #0885a7;
     --blanco: #f0f0f0;
     --fuente: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -14,11 +14,11 @@
 }
 /* NAVBAR */
 .logo_nav{
-    width: 400px;
+    width: 100px;
 }
 @media (max-width: 768px ) {
     .logo_nav{
-        width: 200px;
+        width: 80px;
     }
 }
 .informacion_usuario p{
@@ -39,6 +39,8 @@
 .bi-person-circle{
     font-size: 20px;
 }
+
+
 
 /* FROMULARIOS DE REGISTRO Y LOGIN */
 .imagen_hero{
