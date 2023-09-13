@@ -9,8 +9,7 @@
         <div class="container-fluid p-0">
             <div class="row text-center">
                 <div class="col contenedor_tipo_tribunal p-4">
-                        <h1>Vehículos entregados</h1>
-                        
+                        <h1>Vehículos entregados</h1>      
                 </div>
             </div>
         </div>
@@ -58,8 +57,8 @@
                         </table>
                     {% else %}
                         <div class="text-center">
-                            <h3>No existen registros de vehículos entregados</h3>
-                            <a href="{% url 'vehiculos_entregados' %}"><button class="btn btn-success mt-3">Volver</button></a>
+                            <h3>No hubo resultados para su búsqueda</h3>
+                            <a href="{% url 'vehiculos_entregados' %}"><button class="btn btn-primary mt-3">Volver</button></a>
                         </div>
                     {% endif %}
 

@@ -19,7 +19,7 @@ class RegistrarUsuario(CreateView):
     model = User
     form_class = UserCreationFormModificated
     template_name = 'registrar_usuario.html'
-    success_url = reverse_lazy('logear_usuario')
+    success_url = reverse_lazy('ingreso_usuario')
 
     def form_valid(self, form):
         try:
@@ -58,7 +58,7 @@ def logear_usuario(request):
 
 def cerrar_sesion(request):
     logout(request)
-    return redirect('logear_usuario')
+    return redirect('ingreso_usuario')
 
 
 @login_required
