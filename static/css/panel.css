@@ -12,6 +12,7 @@
     color: rgb(255, 0, 0);
     list-style: none;
 }
+
 /* NAVBAR */
 .logo_nav{
     width: 100px;
@@ -40,20 +41,13 @@
     font-size: 20px;
 }
 
-
-
 /* FROMULARIOS DE REGISTRO Y LOGIN */
 .imagen_hero{
-    background-image: url(../images/fondo_panel.webp);
+    background-image: url(../images/fondo_panel_usuario.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-.imagen_hero2{
-    background-image: url(../images/fondo_panel2.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 100vh;
 }
 .titulo_panel{
     font-weight: 700;
@@ -73,18 +67,7 @@
     color: rgb(0, 0, 0);
 
 }
-.imagen_fondo{
-    max-width: 800px;
-}
 @media (max-width: 525px) {
-    .imagen_fondo{
-        visibility: hidden;
-        max-width: 0;
-    }
-    .imagen_fondo2{
-        visibility: hidden;
-        max-width: 0;
-    }
     .imagen_hero2{
         height: 100vh;
     }
