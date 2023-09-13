@@ -3,7 +3,7 @@ from django import forms
 
 def atributos_custom(atributos=None):
     atributos_bases ={
-        'class':'form-control shadow-none border-1 mb-2 border-primary',
+        'class':'form-control shadow-none border-1 mb-2 border-secondary',
     }
     if atributos:
         atributos_bases.update(atributos)

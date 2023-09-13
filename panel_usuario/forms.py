@@ -10,11 +10,11 @@ class UserCreationFormModificated(UserCreationForm):
         fields = ['first_name', 'last_name', 'codigo_funcionario', 'grado', 'email', 'password1', 'password2']
         
         widgets = {
-            'first_name': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-success', 'placeholder':'Nombre'}),
-            'last_name': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-success', 'placeholder':'Apellidos'}),
-            'codigo_funcionario': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-success', 'placeholder':'000000-X'}),
-            'email': forms.EmailInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-success', 'placeholder':'nombre@gmail.com'}),
-            'grado': forms.Select(attrs={'class':'form-control shadow-none border-1 mb-2 border-success'}),
+            'first_name': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'Nombre'}),
+            'last_name': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'Apellidos'}),
+            'codigo_funcionario': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'000000-X'}),
+            'email': forms.EmailInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'nombre@gmail.com'}),
+            'grado': forms.Select(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary'}),
         }
 
 
