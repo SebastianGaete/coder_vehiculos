@@ -3,20 +3,33 @@ from django.contrib.auth.forms import UserCreationForm, SetPasswordForm
 from .models import User
 from django.contrib.auth import get_user_model
 
+def atributos(atributos=None):
+    estilos = {'class':'form-control shadow-none border-1 mb-2 border-secondary'}
+    if atributos != None:
+        estilos.update(atributos)
+    return estilos
 
 class UserCreationFormModificated(UserCreationForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            if field == self.fields['first_name']:
+                field.required = True
+            if field == self.fields['last_name']:
+                field.required = True
+
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'codigo_funcionario', 'grado', 'email', 'password1', 'password2']
-        
-        widgets = {
-            'first_name': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'Nombre'}),
-            'last_name': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'Apellidos'}),
-            'codigo_funcionario': forms.TextInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'000000-X'}),
-            'email': forms.EmailInput(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary', 'placeholder':'nombre@gmail.com'}),
-            'grado': forms.Select(attrs={'class':'form-control shadow-none border-1 mb-2 border-secondary'}),
-        }
+        fields = ["first_name", "last_name", "codigo_funcionario", "email", "grado"]
 
+        widgets = {
+            'first_name': forms.TextInput(attrs=atributos({'placeholder':'Nombre'})),
+            'last_name': forms.TextInput(attrs=atributos({'placeholder':'Apellidos'})),
+            'codigo_funcionario': forms.TextInput(attrs=atributos({'placeholder':'000000-X'})),
+            'email': forms.EmailInput(attrs=atributos({'placeholder':'nombre@gmail.com'})),
+            'grado': forms.Select(attrs=atributos()),
+        }
 
     def verificar_numero_placa(self):
         codigo_funcionario = self.cleaned_data.get('codigo_funcionario')
@@ -30,15 +43,6 @@ class UserCreationFormModificated(UserCreationForm):
             raise forms.ValidationError("Esta dirección de correo electrónico ya está en uso.")
         return email
     
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            if field == self.fields['first_name']:
-                field.required = True
-            if field == self.fields['last_name']:
-                field.required = True
-
 
 class SetPasswordForm(SetPasswordForm):
     class Meta:
