@@ -41,7 +41,7 @@
     font-size: 20px;
 }
 
-/* FROMULARIOS DE REGISTRO Y LOGIN */
+/* FORMULARIOS DE REGISTRO Y LOGIN */
 .imagen_hero{
     background-image: url(../images/fondo_panel_usuario.webp);
     background-position: center;
@@ -65,13 +65,16 @@
 .boton_panel:hover{
     background-color: transparent;
     color: rgb(0, 0, 0);
-
 }
 @media (max-width: 525px) {
-    .imagen_hero2{
+    .imagen_hero{
         height: 100vh;
     }
+    .mq_imagen_hero{
+        height: 100%;
+    }
 }
+
 .formulario_login{
-    margin-top: 150px;
+    margin-top: 200px;
 }
