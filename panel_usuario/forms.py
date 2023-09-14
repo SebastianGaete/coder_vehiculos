@@ -11,14 +11,6 @@ def atributos(atributos=None):
 
 class UserCreationFormModificated(UserCreationForm):
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            if field == self.fields['first_name']:
-                field.required = True
-            if field == self.fields['last_name']:
-                field.required = True
-
     class Meta:
         model = User
         fields = ["first_name", "last_name", "codigo_funcionario", "email", "grado"]
@@ -43,6 +35,13 @@ class UserCreationFormModificated(UserCreationForm):
             raise forms.ValidationError("Esta dirección de correo electrónico ya está en uso.")
         return email
     
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            if field == self.fields['first_name']:
+                field.required = True
+            if field == self.fields['last_name']:
+                field.required = True
 
 class SetPasswordForm(SetPasswordForm):
     class Meta:
