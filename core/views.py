@@ -29,7 +29,7 @@ class Index(ListView):
         busqueda = self.request.GET.get("buscar")
         page = self.request.GET.get('page', 1)
         try:
-            paginador = Paginator(vehiculos, 10)
+            paginador = Paginator(vehiculos, 1)
             vehiculos = paginador.page(page)
         except:
             raise Http404

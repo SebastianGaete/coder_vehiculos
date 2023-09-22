@@ -201,3 +201,14 @@ li{
 .subtitulos_detalle{
     font-weight: 600;
 }
+
+/* PAGINADOR */
+.fondo_bg{
+    background-color: var(--bg_fondo_page);
+}
+.fondo_bg:hover{
+    background-color: var(--bg_fondo_page);
+}
+.letra{
+    color: var(--bg_search);
+}
