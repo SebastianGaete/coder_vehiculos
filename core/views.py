@@ -29,7 +29,7 @@ class Index(ListView):
         busqueda = self.request.GET.get("buscar")
         page = self.request.GET.get('page', 1)
         try:
-            paginador = Paginator(vehiculos, 1)
+            paginador = Paginator(vehiculos, 10)
             vehiculos = paginador.page(page)
         except:
             raise Http404
@@ -70,7 +70,7 @@ class CrearVehiculo(CreateView):
             return super().form_invalid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, f"El vehículo con P.P.U. {placa_patente} ya se encuentra registrado.")
+        messages.error(self.request, f"El vehículo con la P.P.U. que deseas ingresar ya se encuentra registrado.")
         return super().form_invalid(form)
 
     
