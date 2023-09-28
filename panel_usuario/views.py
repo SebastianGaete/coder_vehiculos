@@ -14,7 +14,7 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 
-# @method_decorator(login_required,  name='dispatch')
+@method_decorator(login_required,  name='dispatch')
 class RegistrarUsuario(CreateView):
     model = User
     form_class = UserCreationFormModificated
