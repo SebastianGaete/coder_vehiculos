@@ -1,0 +1,214 @@
+:root{
+    --bg_fondo_page: #0885a7;
+    --bg_search: #0fadcc;
+    --blanco: #f0f0f0;
+    --blancoFuente: #f2eff3;
+    --fuente: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+/* NAVBAR */
+.logo_nav{
+    width: 100px;
+}
+@media (max-width: 768px ) {
+    .logo_nav{
+        width: 80px;
+    }
+}
+.informacion_usuario p{
+    font-weight: 600;
+}
+.titulo_informacion_usuario{
+    padding-bottom: 10px;
+    border-bottom: solid var(--bg_fondo_page) 4px;
+}
+.boton_usuario_nav{
+    border: none;
+    width: 40px;
+    padding: 6px 1px 5px 0;
+    border-radius: 50%;
+    background-color: var(--bg_fondo_page);
+    color: var(--blanco)
+}
+.bi-person-circle{
+    font-size: 20px;
+}
+
+
+
+/* SUB_NAVBAR  */
+.bg_main{
+    background-color: var(--blancoFuente);
+}
+
+.bg_filtros{
+    background-color: var(--bg_fondo_page);
+}
+.dropdown-menu{
+    width: 180px;
+}
+.enlaces_filtros{
+    background-color: var(--blanco);
+}
+
+.enlaces_filtros a{
+    color: rgb(0, 0, 0);
+    line-height: 2;
+    padding-left: 10px;
+}
+
+.input_search{
+    width: 200px;
+    border: none;
+}
+.button_search{
+    background-color: var(--bg_fondo_page);
+    border: none;
+    width: 35px;
+}
+.button_search:hover{
+    background-color: var(--bg_search);
+}
+.button_search i{
+    color: var(--blanco);
+    font-size: 25px;
+}
+
+.icon_index{
+    font-size: 50px;
+    color: var(--blanco);
+}
+.buttons_index{
+    background-color: var(--bg_search);
+    border: none;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--blanco);
+}
+
+/* INDEX */
+.titulo_index{
+    margin: 60px 0 30px;
+    font-weight: 600;
+}
+.cantidad_vehiculos_index{
+    background-color: var(--bg_fondo_page);
+    width: 180px;
+    padding: 5px;
+    color: var(--blanco);
+    font-weight: 600;
+}
+@media (max-width: 525px) {
+    .titulo_index{
+        font-size: 20px;
+    }
+    .cantidad_vehiculos_index{
+        font-size: 15px;
+        width: 140px;
+    }
+}
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(176, 172, 172);
+    margin: 20px 0;
+}
+
+
+
+/* FORMULARIOS */
+.titulo_formulario{
+    font-weight: 700;
+    text-align: center;
+    margin-top: 40px;
+}
+.advertencia_subtitulo{
+    color: var(--bg_fondo_page);
+    font-weight: 700;
+    text-align: center;
+}
+.errorlist{
+    display: none;
+}
+
+/*  FILTROS POR TRIBUNAL  */
+.contenedor_tribunales{
+    background-color: white;
+}
+.contenedor_tipo_tribunal{
+    background-color: var(--bg_fondo_page);
+}
+.contenedor_tipo_tribunal h1{
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--blanco);
+}
+
+@media (max-width: 429px) {
+    .contenedor_tipo_tribunal h1{
+        font-size: 20px;
+    }
+}
+.boton_tribunales{
+    background-color: var(--bg_fondo_page);
+    border: none;
+    width: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--blanco);
+    font-weight: 600;
+}
+.boton_tribunales:hover{
+    background-color: var(--bg_search);
+}
+.cantidad_vehiculos{
+    background-color: var(--bg_fondo_page);
+    width: 190px;
+    padding: 5px;
+    color: var(--blanco);
+    font-weight: 600;
+}
+
+
+/* DETALLE DE VEHÍCULO */
+.bg_detalle{
+    background-color: var(--blanco);
+}
+.contenedor_img_detalle{
+    max-width: 580px;
+}
+.contenedor_img_detalle img{
+    height: 330px;
+}
+@media (max-width: 768px) {
+    .contenedor_img_detalle img{
+        height: 210px;
+    }
+}
+.subtitulos_detalle{
+    font-weight: 600;
+}
+
+/* PAGINADOR */
+.fondo_bg{
+    background-color: var(--bg_fondo_page);
+}
+.fondo_bg:hover{
+    background-color: var(--bg_fondo_page);
+}
+.letra{
+    color: var(--bg_search);
+}

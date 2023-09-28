@@ -84,8 +84,7 @@ WSGI_APPLICATION = 'proyecto_vehiculos.wsgi.application'
 
 # PGPASSWORD=DuFVyWpv7zcEHZYbPVzA psql -h containers-us-west-172.railway.app -U postgres -p 8053 -d railway
 
-
-# PGPASSWORD=JFlpDGQHtvhWocfPuEj5 psql -h containers-us-west-82.railway.app -U postgres -p 6688 -d railway
+CSRF_TRUSTED_ORIGINS = ['https://custodiavehiculoscv.up.railway.app']
 
 DATABASES = {
     'default': {

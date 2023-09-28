@@ -1,0 +1,80 @@
+:root{
+    --botones: #0885a7;
+    --blanco: #f0f0f0;
+    --fuente: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuente);
+}
+.errorlist{
+    color: rgb(255, 0, 0);
+    list-style: none;
+}
+
+/* NAVBAR */
+.logo_nav{
+    width: 100px;
+}
+@media (max-width: 768px ) {
+    .logo_nav{
+        width: 80px;
+    }
+}
+.informacion_usuario p{
+    font-weight: 600;
+}
+.titulo_informacion_usuario{
+    padding-bottom: 10px;
+    border-bottom: solid var(--botones) 4px;
+}
+.boton_usuario_nav{
+    border: none;
+    width: 40px;
+    padding: 6px 1px 5px 0;
+    border-radius: 50%;
+    background-color: var(--botones);
+    color: var(--blanco)
+}
+.bi-person-circle{
+    font-size: 20px;
+}
+
+/* FORMULARIOS DE REGISTRO Y LOGIN */
+.imagen_hero{
+    background-image: url(../images/fondo_panel_usuario.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.titulo_panel{
+    font-weight: 700;
+    text-align: center;
+}
+.boton_panel{
+    margin-top: 10px;
+    background-color: var(--botones);
+    color: var(--blanco);
+    padding: 10px;
+    width: 150px;
+    border: solid var(--botones) 2px;
+    border-radius: 10px;
+}
+.boton_panel:hover{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+@media (max-width: 525px) {
+    .imagen_hero{
+        height: 100vh;
+    }
+    .mq_imagen_hero{
+        height: 100%;
+    }
+}
+
+.formulario_login{
+    margin-top: 200px;
+}
