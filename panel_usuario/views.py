@@ -12,8 +12,8 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 
-
 # Create your views here.
+
 # @method_decorator(login_required,  name='dispatch')
 class RegistrarUsuario(CreateView):
     model = User

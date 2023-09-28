@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=&pkk%^zvm#iasw0@x_c4rdxe7hr!&3%3k!p8c5_5ary0(wua9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -85,13 +85,19 @@ WSGI_APPLICATION = 'proyecto_vehiculos.wsgi.application'
 # PGPASSWORD=DuFVyWpv7zcEHZYbPVzA psql -h containers-us-west-172.railway.app -U postgres -p 8053 -d railway
 
 
+# PGPASSWORD=JFlpDGQHtvhWocfPuEj5 psql -h containers-us-west-82.railway.app -U postgres -p 6688 -d railway
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db_coder_vehiculos.sqlite',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PORT': '6688',
+        'PASSWORD':'JFlpDGQHtvhWocfPuEj5',
+        'HOST': 'containers-us-west-82.railway.app'
     }
 }
+
 
 
 # Password validation
