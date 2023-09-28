@@ -68,7 +68,7 @@ def cambiar_contraseña(request):
         form = SetPasswordForm(user, request.POST)
         if form.is_valid():
             form.save()
-            return redirect('logear_usuario')
+            return redirect('ingreso_usuario')
         else:
             return render(request, 'cambiar_password.html', {'form': form})
 
