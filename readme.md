@@ -2,10 +2,7 @@
 
 Este proyecto tiene como finalidad llevar un registro de vehículos que se encuentren en custodia en algún recinto policial, los cuales pueden quedar a disposición de:
 
-Fiscalía Local
-Juzgado de Policía Local
-Propietario
-Fiscales
+Fiscalía Local, Juzgado de Policía Local, Propietario, Fiscales.
 Estos vehículos pueden estar en el recinto por distintos motivos, como delitos, accidentes de tránsito, desperfectos mecánicos, entre otros.
 
 ¿Cómo utilizar la plataforma?
